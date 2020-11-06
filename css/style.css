@@ -1,0 +1,402 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+:root {
+  --primary-color: #047aed;
+  --secondary-color: #1c3fa8;
+  --dark-color: #002240;
+  --light-color: #f4f4f4;
+
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #333;
+  line-height: 1.6;
+  font-size: 1.6rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 1rem 0;
+}
+
+p {
+  margin: 1rem 0;
+  font-size: 1.6rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+code,
+pre {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+/* Navbar */
+.nav-bar {
+  background-color: var(--primary-color);
+  color: #fff;
+  height: 8rem;
+}
+
+.nav-bar .flex {
+  justify-content: space-between;
+}
+
+.nav-bar ul {
+  display: flex;
+}
+
+.nav-bar ul a {
+  color: #fff;
+  padding: 1rem;
+  margin: 0 0.5rem;
+}
+
+.nav-bar ul a:hover {
+  border-bottom: 2px #fff solid;
+}
+
+/* Showcase */
+.showcase {
+  height: 40rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  position: relative;
+}
+
+.showcase::before,
+.showcase::after {
+  content: "";
+  position: absolute;
+  height: 10rem;
+  bottom: -6rem;
+  right: 0;
+  left: 0;
+  background: #fff;
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
+  transform: skewY(-3deg);
+}
+
+.showcase .grid {
+  overflow: visible;
+  grid-template-columns: 55% 45%;
+  gap: 3rem;
+}
+
+.showcase .showcase-text {
+  animation: slideInFromLeft 1s ease-in;
+}
+
+.showcase p {
+  margin: 2rem 0;
+}
+
+.showcase .showcase-form {
+  position: relative;
+  top: 6rem;
+  height: 35rem;
+  width: 40rem;
+  padding: 4rem;
+  z-index: 2;
+  animation: slideInFromRight 1s ease-in;
+}
+
+.showcase .showcase-form .form-control {
+  margin: 3rem 0;
+}
+
+.showcase .showcase-form input:not([type="submit"]) {
+  border: 0;
+  border-bottom: 1px solid #b4becb;
+  width: 100%;
+  padding: 0.3rem;
+  font-size: 1.6rem;
+}
+
+.showcase .showcase-form input:focus {
+  outline: none;
+}
+
+/* Stats */
+.stats {
+  padding-top: 10rem;
+  animation: slideInFromBottom 1s ease-in;
+}
+
+.stats .stats-heading {
+  max-width: 50rem;
+  margin: auto;
+  font-size: 1.8rem;
+}
+
+.stats .grid h3 {
+  font-size: 3.5rem;
+}
+
+.stats .grid p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* CLI */
+.cli .grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0 3rem;
+}
+
+.cli .grid > *:first-child {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+/* Cloud */
+.cloud .grid {
+  grid-template-columns: 4fr 3fr;
+}
+
+/* Languages */
+.languages .flex {
+  flex-wrap: wrap;
+}
+
+.languages .card {
+  text-align: center;
+  margin: 1.8rem 1rem 4rem;
+  transition: transform 0.2s ease-in;
+}
+
+.languages .card h4 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.languages .card:hover {
+  transform: translateY(-1.5rem);
+}
+
+/* Features */
+.features-main .container {
+  overflow: visible;
+}
+.features-head img {
+  width: 20rem;
+  justify-self: flex-end;
+}
+
+.features-sub-head img {
+  width: 30rem;
+  justify-self: flex-end;
+}
+
+.features-main .card > i {
+  margin-right: 2rem;
+}
+
+.features-main .grid .card-1 {
+  grid-column: 1 / span 3;
+}
+
+.features-main .grid .card-2 {
+  grid-column: 1 / span 2;
+}
+
+/* Docs */
+.docs-main h3 {
+  margin: 2rem 0;
+}
+
+.docs-main nav li {
+  font-size: 1.7rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.docs-main li a:hover {
+  font-weight: bold;
+}
+
+.docs-main .grid {
+  grid-template-columns: 1fr 2fr;
+  align-items: flex-start;
+}
+
+/* Footer */
+.footer .social a {
+  margin: 0 1rem;
+}
+
+/* Animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%); /*Start from the far left outside the page*/
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%); /*Start from the far left outside the page*/
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%); /*Start from the far left outside the page*/
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%); /*Start from the far left outside the page*/
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes popup {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes opc {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Tablets and under */
+@media (max-width: 768px) {
+  .grid,
+  .showcase .grid,
+  .stats .grid,
+  .cli .grid,
+  .cloud .grid,
+  .features-main .grid,
+  .docs-main .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .showcase {
+    height: auto;
+  }
+
+  .showcase .showcase-text {
+    text-align: center;
+    margin-top: 4rem;
+    animation: opc 1s ease-in-out;
+  }
+
+  .showcase .showcase-form {
+    justify-self: center;
+    margin: auto;
+    animation: popup 1s ease-in-out;
+  }
+
+  .stats {
+    animation: opc 1s ease-in-out;
+  }
+
+  .cli .grid > *:first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .features-head,
+  .features-sub-head,
+  .docs-head {
+    text-align: center;
+  }
+  .features-head img,
+  .features-sub-head img,
+  .docs-head img {
+    justify-self: center;
+    width: 20rem;
+  }
+
+  .features-main .grid .card-1,
+  .features-main .grid .card-2 {
+    grid-column: 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .nav-bar {
+    height: 12.5rem;
+  }
+
+  .nav-bar .flex {
+    flex-direction: column;
+  }
+
+  .nav-bar ul {
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
